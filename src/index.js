@@ -44,57 +44,57 @@ import {
  */
 export const ICONS = [
 	{
-		label: __( 'Chevron Right', 'enable-button-icons' ),
+		label: __('Chevron Right', 'enable-button-icons'),
 		value: 'chevron-right',
 		icon: chevronRight,
 	},
 	{
-		label: __( 'Chevron Left', 'enable-button-icons' ),
+		label: __('Chevron Left', 'enable-button-icons'),
 		value: 'chevron-left',
 		icon: chevronLeft,
 	},
 	{
-		label: __( 'Chevron Right (Small)', 'enable-button-icons' ),
+		label: __('Chevron Right (Small)', 'enable-button-icons'),
 		value: 'chevron-right-small',
 		icon: chevronRightSmall,
 	},
 	{
-		label: __( 'Chevron Left (Small)', 'enable-button-icons' ),
+		label: __('Chevron Left (Small)', 'enable-button-icons'),
 		value: 'chevron-left-small',
 		icon: chevronLeftSmall,
 	},
 	{
-		label: __( 'Shuffle', 'enable-button-icons' ),
+		label: __('Shuffle', 'enable-button-icons'),
 		value: 'shuffle',
 		icon: shuffle,
 	},
 	{
-		label: __( 'Arrow Right', 'enable-button-icons' ),
+		label: __('Arrow Right', 'enable-button-icons'),
 		value: 'arrow-right',
 		icon: arrowRight,
 	},
 	{
-		label: __( 'Arrow Left', 'enable-button-icons' ),
+		label: __('Arrow Left', 'enable-button-icons'),
 		value: 'arrow-left',
 		icon: arrowLeft,
 	},
 	{
-		label: __( 'Next', 'enable-button-icons' ),
+		label: __('Next', 'enable-button-icons'),
 		value: 'next',
 		icon: next,
 	},
 	{
-		label: __( 'Previous', 'enable-button-icons' ),
+		label: __('Previous', 'enable-button-icons'),
 		value: 'previous',
 		icon: previous,
 	},
 	{
-		label: __( 'Download', 'enable-button-icons' ),
+		label: __('Download', 'enable-button-icons'),
 		value: 'download',
 		icon: download,
 	},
 	{
-		label: __( 'External Arrow', 'enable-button-icons' ),
+		label: __('External Arrow', 'enable-button-icons'),
 		value: 'external-arrow',
 		icon: (
 			<svg
@@ -108,47 +108,85 @@ export const ICONS = [
 		),
 	},
 	{
-		label: __( 'External', 'enable-button-icons' ),
+		label: __('Arrow Left Circle', 'enable-button-icons'),
+		value: 'arrow-left-circle',
+		icon: (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				fill="none"
+				stroke="currentColor"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				viewBox="0 0 24 24"
+			>
+				<circle cx="12" cy="12" r="10" />
+				<path d="M16 12H8M12 8l-4 4 4 4" />
+			</svg>
+		),
+	},
+	{
+		label: __('Arrow Right Circle', 'enable-button-icons'),
+		value: 'arrow-right-circle',
+		icon: (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				fill="none"
+				stroke="currentColor"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				viewBox="0 0 24 24"
+			>
+				<circle cx="12" cy="12" r="10" />
+				<path d="M8 12h8M12 16l4-4-4-4" />
+			</svg>
+		),
+	},
+	{
+		label: __('External', 'enable-button-icons'),
 		value: 'external',
 		icon: external,
 	},
 	{
-		label: __( 'Login', 'enable-button-icons' ),
+		label: __('Login', 'enable-button-icons'),
 		value: 'login',
 		icon: login,
 	},
 	{
-		label: __( 'Lock', 'enable-button-icons' ),
+		label: __('Lock', 'enable-button-icons'),
 		value: 'lock-outline',
 		icon: lockOutline,
 	},
 	{
-		label: __( 'Avatar', 'enable-button-icons' ),
+		label: __('Avatar', 'enable-button-icons'),
 		value: 'comment-author-avatar',
 		icon: commentAuthorAvatar,
 	},
 	{
-		label: __( 'Cloud', 'enable-button-icons' ),
+		label: __('Cloud', 'enable-button-icons'),
 		value: 'cloud',
 		icon: cloud,
 	},
 	{
-		label: __( 'Cloud Upload', 'enable-button-icons' ),
+		label: __('Cloud Upload', 'enable-button-icons'),
 		value: 'cloud-upload',
 		icon: cloudUpload,
 	},
 	{
-		label: __( 'Help', 'enable-button-icons' ),
+		label: __('Help', 'enable-button-icons'),
 		value: 'help',
 		icon: help,
 	},
 	{
-		label: __( 'Info', 'enable-button-icons' ),
+		label: __('Info', 'enable-button-icons'),
 		value: 'info',
 		icon: info,
 	},
 	{
-		label: __( 'WordPress', 'enable-button-icons' ),
+		label: __('WordPress', 'enable-button-icons'),
 		value: 'wordpress',
 		icon: wordpress,
 	},
@@ -160,8 +198,8 @@ export const ICONS = [
  * @since 0.1.0
  * @param {Object} settings
  */
-function addAttributes( settings ) {
-	if ( 'core/button' !== settings.name ) {
+function addAttributes(settings) {
+	if ('core/button' !== settings.name) {
 		return settings;
 	}
 
@@ -199,10 +237,10 @@ addFilter(
  * @since 0.1.0
  * @param {Object} BlockEdit
  */
-function addInspectorControls( BlockEdit ) {
-	return ( props ) => {
-		if ( props.name !== 'core/button' ) {
-			return <BlockEdit { ...props } />;
+function addInspectorControls(BlockEdit) {
+	return (props) => {
+		if (props.name !== 'core/button') {
+			return <BlockEdit {...props} />;
 		}
 
 		const { attributes, setAttributes } = props;
@@ -210,52 +248,42 @@ function addInspectorControls( BlockEdit ) {
 
 		return (
 			<>
-				<BlockEdit { ...props } />
+				<BlockEdit {...props} />
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon settings', 'enable-button-icons' ) }
+						title={__('Icon settings', 'enable-button-icons')}
 						className="button-icon-picker"
-						initialOpen={ true }
+						initialOpen={true}
 					>
 						<PanelRow>
-							<Grid
-								className="button-icon-picker__grid"
-								columns="5"
-								gap="0"
-							>
-								{ ICONS.map( ( icon, index ) => (
+							<Grid className="button-icon-picker__grid" columns="5" gap="0">
+								{ICONS.map((icon, index) => (
 									<Button
-										key={ index }
-										label={ icon?.label }
-										isPressed={ currentIcon === icon.value }
+										key={index}
+										label={icon?.label}
+										isPressed={currentIcon === icon.value}
 										className="button-icon-picker__button"
-										onClick={ () =>
-											setAttributes( {
+										onClick={() =>
+											setAttributes({
 												// Allow user to disable icons.
-												icon:
-													currentIcon === icon.value
-														? null
-														: icon.value,
-											} )
+												icon: currentIcon === icon.value ? null : icon.value,
+											})
 										}
 									>
-										{ icon.icon ?? icon.value }
+										{icon.icon ?? icon.value}
 									</Button>
-								) ) }
+								))}
 							</Grid>
 						</PanelRow>
 						<PanelRow>
 							<ToggleControl
-								label={ __(
-									'Show icon on left',
-									'enable-button-icons'
-								) }
-								checked={ iconPositionLeft }
-								onChange={ () => {
-									setAttributes( {
-										iconPositionLeft: ! iconPositionLeft,
-									} );
-								} }
+								label={__('Show icon on left', 'enable-button-icons')}
+								checked={iconPositionLeft}
+								onChange={() => {
+									setAttributes({
+										iconPositionLeft: !iconPositionLeft,
+									});
+								}}
 							/>
 						</PanelRow>
 					</PanelBody>
@@ -277,20 +305,20 @@ addFilter(
  * @since 0.1.0
  * @param {Object} BlockListBlock
  */
-function addClasses( BlockListBlock ) {
-	return ( props ) => {
+function addClasses(BlockListBlock) {
+	return (props) => {
 		const { name, attributes } = props;
 
-		if ( 'core/button' !== name || ! attributes?.icon ) {
-			return <BlockListBlock { ...props } />;
+		if ('core/button' !== name || !attributes?.icon) {
+			return <BlockListBlock {...props} />;
 		}
 
-		const classes = classnames( props?.className, {
-			[ `has-icon__${ attributes?.icon }` ]: attributes?.icon,
+		const classes = classnames(props?.className, {
+			[`has-icon__${attributes?.icon}`]: attributes?.icon,
 			'has-icon-position__left': attributes?.iconPositionLeft,
-		} );
+		});
 
-		return <BlockListBlock { ...props } className={ classes } />;
+		return <BlockListBlock {...props} className={classes} />;
 	};
 }
 
